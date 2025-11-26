@@ -1,12 +1,15 @@
 import pandas as pd
 import requests
 import io
+import logging
+
+logging.basicConfig(level=logging.INFO)
 
 def load_advbench():
 
     url = "https://raw.githubusercontent.com/llm-attacks/llm-attacks/main/data/advbench/harmful_behaviors.csv"
     
-    print(f"Downloading AdvBench from {url}...")
+    logging.debug(f"Downloading AdvBench from {url}...")
     
     try:
         response = requests.get(url)
@@ -20,7 +23,7 @@ def load_advbench():
         # Extract the list of harmful prompts
         behaviors = df['goal'].tolist()
         
-        print(behaviors)
+        logging.debug(behaviors)
             
         return behaviors
 
