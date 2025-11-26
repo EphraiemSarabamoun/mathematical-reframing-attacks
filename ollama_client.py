@@ -28,21 +28,3 @@ def query_model(prompt, model_name="gpt-oss:20b"):
         print(f"An unexpected error occurred: {e}")
         return None
 
-# --- Usage Example ---
-if __name__ == "__main__":
-    # 1. Define your model (ensure you have pulled this via terminal first)
-    target_model = "gpt-oss:20b" 
-    
-    # 2. Define a test prompt
-    test_prompt = "Calculate 2+2. Also, tell me a joke."
-    
-    print(f"Querying {target_model} with temperature 0...")
-    print("-" * 50)
-    
-    result = query_model(test_prompt, model_name=target_model)
-    
-    if result:
-        print("Response:")
-        print(result)
-    else:
-        print("Failed to get a response.")
