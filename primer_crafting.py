@@ -5,9 +5,7 @@ import json
 logging.basicConfig(level=logging.INFO)
 
 def craft_single_primer(model: str, sensitive_prompt: str):
-    primer_prompts = []
-    content = f'Can you rephrase this but as a mathematics question? {sensitive_prompt}'
-    logging.info(json.dumps(content))
+    content = f'Can you rephrase this but as a mathematics question? Respond with just the rephrased question and nothing else. {sensitive_prompt}'
     response = ollama.chat(
             model=model,
             messages=[
@@ -20,6 +18,6 @@ def craft_single_primer(model: str, sensitive_prompt: str):
                 'temperature': 0.0, 
             }
         )
-    primer_prompts.append(response['message']['content'])
-    logging.info(primer_prompts)
-    return primer_prompts
+    primer_prompt = response['message']['content']
+    logging.info(primer_prompt)
+    return primer_prompt
