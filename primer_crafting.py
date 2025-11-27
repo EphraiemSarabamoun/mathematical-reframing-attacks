@@ -18,6 +18,6 @@ def craft_single_primer(model: str, sensitive_prompt: str):
                 'temperature': 0.0, 
             }
         )
-    primer_prompt = response['message']['content']
-    logging.info(primer_prompt)
-    return primer_prompt
+    modified_prompt = response['message']['content'].split("</think>")[-1]
+    logging.debug(modified_prompt)
+    return modified_prompt

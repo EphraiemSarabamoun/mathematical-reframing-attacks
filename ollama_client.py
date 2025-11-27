@@ -18,6 +18,6 @@ def chat_with_memory(model: str, sensitive_prompt: str):
     logging.debug(f"Response: {response}")
     model_answer = response['message']['content']
     model_thinking = response['message']['thinking'] 
-    logging.info(f"Model answer: {model_answer}")
-    logging.info(f"Model thinking: {model_thinking}")
+    logging.debug(f"Model answer: {model_answer}")
+    logging.debug(f"Model thinking: {model_thinking}")
     return model_answer, model_thinking

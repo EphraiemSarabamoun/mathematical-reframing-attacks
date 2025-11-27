@@ -23,7 +23,7 @@ def load_advbench():
         # Extract the list of harmful prompts
         behaviors = df['goal'].tolist()
         
-        logging.debug(behaviors)
+        logging.debug(f"Loaded {len(behaviors)} behaviors from AdvBench.")
             
         return behaviors
 
