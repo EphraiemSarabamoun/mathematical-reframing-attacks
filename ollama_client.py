@@ -2,6 +2,7 @@ import ollama, logging,json
 
 logging.basicConfig(level=logging.INFO)
 
+# Send one local chat request and return its answer and expected thinking field without storing history.
 def chat_with_memory(model: str, sensitive_prompt: str):
     response = ollama.chat(
         model=model,

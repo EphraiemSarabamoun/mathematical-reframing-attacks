@@ -5,6 +5,7 @@ from openai import OpenAI
 
 logging.basicConfig(level=logging.INFO)
 
+# Send a single target-model request; this helper does not retain conversation history.
 def api_chat_with_memory(model: str, sensitive_prompt: str):
     client = OpenAI(api_key=os.environ.get("OPENAI_API_KEY"))
 

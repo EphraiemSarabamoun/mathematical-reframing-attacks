@@ -18,6 +18,7 @@ attack_model_api = "venice-uncensored"
 target_model_api = "gpt-5.1"
 
 # Helper to flatten text for CSV readability
+# Flatten actual line breaks for CSV readability, treating a missing model response as empty text.
 def clean_text(text):
     if text is None: return ""
     # Replace actual newlines with literal \n string so the CSV row stays on one line

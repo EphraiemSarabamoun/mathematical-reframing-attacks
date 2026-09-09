@@ -5,6 +5,7 @@ from openai import OpenAI
 
 logging.basicConfig(level=logging.INFO)
 
+# Request a mathematical rephrasing from the configured hosted model and return its text.
 def api_craft_single_primer(model: str, sensitive_prompt: str):
     client = OpenAI(api_key=os.environ.get("VENICE_API_KEY"), base_url="https://api.venice.ai/api/v1")
 

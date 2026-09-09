@@ -5,6 +5,7 @@ import logging
 
 logging.basicConfig(level=logging.INFO)
 
+# Download the benchmark goal column and return an empty list if retrieval or parsing fails.
 def load_advbench():
 
     url = "https://raw.githubusercontent.com/llm-attacks/llm-attacks/main/data/advbench/harmful_behaviors.csv"

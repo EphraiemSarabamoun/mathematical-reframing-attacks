@@ -4,6 +4,7 @@ import json
 
 logging.basicConfig(level=logging.INFO)
 
+# Ask the local model for a mathematical rephrasing and remove a leading reasoning block if present.
 def craft_single_primer(model: str, sensitive_prompt: str):
     content = f'Can you rephrase this but as a mathematics question? Respond with just the rephrased question and nothing else. {sensitive_prompt}'
     response = ollama.chat(
